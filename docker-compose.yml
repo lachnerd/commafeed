@@ -4,7 +4,9 @@ commafeed:
     - "8082:8082"
   volumes:
     - "./commafeed-volume:/data/commafeed"
-db:
+  links:
+    - mysql
+mysql:
   image: mysql:5.7
   volumes:
     - "./.data/db:/var/lib/mysql"
