@@ -6,3 +6,13 @@ services:
       - "8082:8082"
     volumes:
       - "./commafeed-volume:/data/commafeed"
+  db:
+    image: mysql:5.7
+    volumes:
+      - "./.data/db:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: commafeed
+      MYSQL_DATABASE: commafeed
+      MYSQL_USER: commafeed
+      MYSQL_PASSWORD: commafeed
