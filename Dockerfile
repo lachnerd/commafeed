@@ -1,5 +1,7 @@
 FROM java:8-jre
 
+COPY . /
+
 RUN { \
 	set -ex; \
 
@@ -13,7 +15,7 @@ RUN { \
 		-fsSL \
 		"https://github.com/tianon/gosu/releases/download/1.8/gosu-$(dpkg --print-architecture)"; \
 	chmod +x /usr/bin/gosu; \
-
+	chmod +x /usr/bin/start-commafeed; \
 	# install commafeed
 	curl \
 		-o /opt/commafeed.jar \
@@ -22,7 +24,5 @@ RUN { \
 }
 
 VOLUME /data/commafeed
-
-COPY . /
 
 CMD ["start-commafeed"]
