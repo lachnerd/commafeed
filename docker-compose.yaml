@@ -1,0 +1,8 @@
+version: "2"
+services:
+  commafeed:
+    image: heinzepreller/commafeed:latest
+    ports:
+      - "8082:8082"
+    volumes:
+      - "./commafeed-volume:/data/commafeed"
