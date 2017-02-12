@@ -2,16 +2,16 @@ commafeed:
   image: heinzepreller/commafeed:latest
   ports:
     - "8082:8082"
-  volumes:
-    - "./commafeed-volume:/data/commafeed"
+#  volumes:
+#    - "./commafeed-volume:/data/commafeed"
   links:
     - mysql:mysql-db
   restart: always
 mysql:
   image: mysql:5.7
   container_name: mysql-db
-  volumes:
-    - "./.data/db:/var/lib/mysql"
+#  volumes:
+#    - "./.data/db:/var/lib/mysql"
   restart: always
   environment:
     MYSQL_ROOT_PASSWORD: commafeed

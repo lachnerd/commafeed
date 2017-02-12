@@ -1,9 +1,9 @@
 #!/bin/sh -ex
 
-if ! test -e /data/commafeed/commafeed.yaml; then
-	cp /opt/commafeed.yaml /data/commafeed/
+if ! test -e /data/commafeed/commafeed.yml; then
+	cp /opt/commafeed.yml /data/commafeed/
 fi
 
 chown commafeed:commafeed -R /data/commafeed
 
-exec gosu commafeed:commafeed java -jar /opt/commafeed.jar server /data/commafeed/commafeed.yaml $@
+exec gosu commafeed:commafeed java -jar /opt/commafeed.jar server /data/commafeed/commafeed.yml $@
