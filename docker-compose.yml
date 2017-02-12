@@ -5,10 +5,11 @@ commafeed:
   volumes:
     - "./commafeed-volume:/data/commafeed"
   links:
-    - mysql
+    - mysql:mysql-db
+  restart: always
 mysql:
   image: mysql:5.7
-  container_name: commafeed-db
+  container_name: mysql-db
   volumes:
     - "./.data/db:/var/lib/mysql"
   restart: always
