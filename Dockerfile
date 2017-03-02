@@ -1,4 +1,4 @@
-FROM java:8-jre
+FROM java:openjdk-8u111-jre-alpine
 
 COPY . /
 
